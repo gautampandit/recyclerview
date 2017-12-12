@@ -29,11 +29,13 @@ public class MainActivity extends AppCompatActivity {
 
         prepareMovieData();
 
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+     //   RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext()); //Vertical Scrolling
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);  // Horizontal Scrolling
+
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
      //   recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));  //Create Divder between items
-        recyclerView.addItemDecoration(new MyDividerItemDecoration(this, LinearLayoutManager.VERTICAL, 16 )); //create Divider with margin
+        recyclerView.addItemDecoration(new MyDividerItemDecoration(this, LinearLayoutManager.VERTICAL, 26 )); //create Divider with margin
         recyclerView.setAdapter(moviesAdapter);
     }//onCreate
 
